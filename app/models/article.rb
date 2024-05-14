@@ -1,4 +1,8 @@
 class Article < ApplicationRecord
+   
+  validates :title, :author, presence: true
+
+
   has_many :images
   has_many :suppliers
 
