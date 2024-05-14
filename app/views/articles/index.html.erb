@@ -1,5 +1,8 @@
-<h1>Articles</h1>
-
+<div class="d-grid gap-1 col-4 mx-auto">
+   <h1>Articles</h1>
+   <p class="text-decoration-underline fw-bold">Total list:</p>
+</div>
+<div class="list-group d-grid gap-2 col-4 mx-auto">
 <ul>
   <% @articles.each do |article| %>
     <li>
@@ -8,5 +11,9 @@
   <% end %>
 </ul>
 
-<%= link_to "New Article", new_article_path %>
 
+<div class="d-grid gap-2 col-4 mx-auto">
+  <button type="button" class="btn btn-outline-primary">
+    <%= link_to "New Article", new_article_path %>
+  </button>
+</div>

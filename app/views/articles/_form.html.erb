@@ -1,29 +1,51 @@
+
+
+
 <%= form_with model: article do |form| %>
-  <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-    <% article.errors.full_messages_for(:title).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
+    <div class="row mb-3">
+      <div class="col-sm-4 col-form-label">
+        <%= form.label :title %><br>
+      </div>
+      <div class="col-sm-9">
+            <div class="row form-control">
+              <%= form.text_field :title %>
+              <% article.errors.full_messages_for(:title).each do |message| %>
+              <div><%= message %></div>
+              <% end %>
+            </div>
+      </div>
+    </div>
 
-  <div>
-    <%= form.label :author %><br>
-    <%= form.text_field :author %>
-    <% article.errors.full_messages_for(:author).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
+    <div class="row mb-3">
+        <div class="col-sm-4 col-form-label">
+          <%= form.label :author %><br>
+        </div>
+        <div class="col-sm-9">
+              <div class="row form-control">
+                <%= form.text_field :author %>
+                <% article.errors.full_messages_for(:author).each do |message| %>
+                <div><%= message %></div>
+                <% end %>
+              </div>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-sm-4 col-form-label">
+           <%= form.label :body %><br>
+        </div>
+        <div class="col-sm-9">
+          <div class="row form-control">
+            <%= form.text_area :body %><br>
+            <% article.errors.full_messages_for(:body).each do |message| %>
+              <div><%= message %></div>
+            <% end %>
+          </div>
+        </div>
+    </div>
 
-  <div>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %><br>
-    <% article.errors.full_messages_for(:body).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="col-auto">
+    <%= form.submit class:"btn btn-primary" %>
+    
   </div>
-<% end %>
+<% end %>  
