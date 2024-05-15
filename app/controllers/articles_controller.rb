@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-
+byebug
     if @article.save
       redirect_to @article
     else
@@ -43,6 +43,10 @@ class ArticlesController < ApplicationController
   end
   private
     def article_params
-      params.require(:article).permit(:title, :author, :body)
+      params.require(:article).permit(:title, :author, :body,
+      images_attributes: [
+        :name, :url,
+      ]
+      )
     end
 end
