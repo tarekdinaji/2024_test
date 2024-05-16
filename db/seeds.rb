@@ -7,3 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+
+Article.create(title: "The Hobbit", author: "J. R. R. Tolkien", body: "jfuerklsj j;lksd")
+Article.create(title: "Dream of the Red Chamber", author: "Cao Xueqin", body: "jflajs;ier djfkejpr9")
+Article.create(title: "Harry Potter and the Philosopher's Stone", author: "J. K. Rowling", body: " j;lksd")
