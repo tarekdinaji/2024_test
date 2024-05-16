@@ -1,0 +1,35 @@
+<%= form_with model: image do |temimage| %>
+      <div class="row mb-3">
+          <div class="col-sm-4 col-form-label">
+            <%= temimage.label :name, "Image Name" %><br>
+          </div>
+          <div class="col-sm-9">
+            <div class="row form-control">
+              <%= temimage.text_field :name %><br>
+            </div>
+          </div>
+      </div>
+      <div class="row mb-3">
+          <div class="col-sm-4 col-form-label">
+            <%= temimage.label :url, "URL" %><br>
+          </div>
+          <div class="col-sm-9">
+            <div class="row form-control">
+              <%= temimage.text_field :url %><br>
+            </div>
+          </div>
+      </div>
+      <div class="row mb-3">
+          <div class="col-sm-4 col-form-label">
+            <%= temimage.label :article_id, "Parent Article ID" %><br>
+          </div>
+          <div class="col-sm-9">
+            <div class="row form-control">
+              <%= temimage.number_field :article_id %><br>
+            </div>
+          </div>
+      </div>
+  <div class="col-auto">
+    <%= temimage.submit class:"btn btn-primary" %>
+  </div>
+<% end %>  

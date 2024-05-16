@@ -12,8 +12,7 @@ class ImagesController < ApplicationController
   end
 
   def create
-    @image = image.new(image_params)
-
+    @image = Image.new(image_params)
     if @image.save
       redirect_to @image
     else
@@ -28,7 +27,7 @@ class ImagesController < ApplicationController
   def update
     find_image
 
-    if @image.update(image_params)
+    if @image.update(Image_params)
       redirect_to @image
     else
       render :edit, status: :unprocessable_entity
@@ -43,10 +42,10 @@ class ImagesController < ApplicationController
   end
   private
     def find_image
-      @image = image.find(params[:id])
+      @image = Image.find(params[:id])
     end
 
     def image_params
-      params.require(:image).permit(:name, :url)
+      params.require(:image).permit(:name, :url, :article_id)
     end
 end

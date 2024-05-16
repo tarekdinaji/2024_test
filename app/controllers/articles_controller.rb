@@ -9,11 +9,11 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+    @article.images.build
   end
 
   def create
     @article = Article.new(article_params)
-byebug
     if @article.save
       redirect_to @article
     else
@@ -23,6 +23,7 @@ byebug
 
   def edit
     @article = Article.find(params[:id])
+    @article.images.build
   end
 
   def update
